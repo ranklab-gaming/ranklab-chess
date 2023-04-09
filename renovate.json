@@ -1,10 +1,5 @@
 {
   "extends": ["config:base"],
   "platformAutomerge": true,
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["*"],
-      "automerge": true
-    }
-  ]
+  "automerge": true
 }
