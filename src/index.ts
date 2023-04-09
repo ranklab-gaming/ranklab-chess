@@ -7,5 +7,5 @@ document.addEventListener("DOMContentLoaded", () => {
     throw new Error("Could not find the app div")
   }
 
-  appDiv.innerHTML = "Hello, World"
+  console.log("App started")
 })
