@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 18
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm gh-pages
       - name: Install dependencies
         run: pnpm install
       - name: Run tests
@@ -22,5 +22,4 @@ jobs:
         run: pnpm build
       - name: Deploy to GitHub Pages
         run: |
-          pnpm install -g gh-pages
           gh-pages -d docs -t --repo https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
