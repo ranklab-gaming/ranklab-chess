@@ -21,5 +21,8 @@ jobs:
       - name: Build project
         run: pnpm build
       - name: Deploy to GitHub Pages
-        run: |
-          gh-pages -d docs -t --repo https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: docs
+          token: ${{ secrets.GITHUB_TOKEN }}
