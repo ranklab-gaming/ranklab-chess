@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var appDiv = document.getElementById(\"app\");\n    if (!appDiv) {\n        throw new Error(\"Could not find the app div\");\n    }\n    appDiv.innerHTML = \"Hello, World\";\n});\n\n\n//# sourceURL=webpack://ranklab-chess/./src/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    var appDiv = document.getElementById(\"app\");\n    if (!appDiv) {\n        throw new Error(\"Could not find the app div\");\n    }\n    console.log(\"App started\");\n});\n\n\n//# sourceURL=webpack://ranklab-chess/./src/index.ts?");
 
 /***/ })
 
