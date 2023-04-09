@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm test
+      - name: Build project
+        run: pnpm build
+      - name: Deploy to GitHub Pages
+        run: |
+          pnpm install -g gh-pages
+          gh-pages -d docs -t --repo https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
