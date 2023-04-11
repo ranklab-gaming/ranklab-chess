@@ -2,6 +2,8 @@ name: Pull Request CI
 on:
   pull_request:
     branches: [master]
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
