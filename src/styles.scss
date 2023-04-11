@@ -22,14 +22,7 @@ $lpv-good-move: hsl(130, 67%, 40%);
 $lpv-brilliant: hsl(129, 71%, 30%);
 $lpv-interesting: hsl(307, 80%, 59%);
 
-@import "../node_modules/lichess-pgn-viewer/scss/lichess-pgn-viewer";
-
-.lpv {
-  @extend %box-neat-force;
-  &__player__title {
-    color: $c-brag;
-  }
-}
+@import "../node_modules/@ranklab-gaming/lichess-pgn-viewer/scss/lichess-pgn-viewer";
 
 @font-face {
   font-family: Roboto;

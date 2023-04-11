@@ -1,9 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  lichess-pgn-viewer:
-    specifier: '@ranklab-gaming/lichess-pgn-viewer'
-    version: link:@ranklab-gaming/lichess-pgn-viewer
+  '@ranklab-gaming/lichess-pgn-viewer':
+    specifier: 1.5.5
+    version: 1.5.5
   webpack:
     specifier: ^5.78.0
     version: 5.78.0(webpack-cli@5.0.1)
@@ -92,6 +92,10 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
+
+  /@badrap/result@0.2.13:
+    resolution: {integrity: sha512-Qvyzz0dmGY0h8pwvBFo1BznAKf5Y5NXIDiqhPALWtfU7oHbAToCtPu4FlYQ3uysskSWLx8GUiyhe0nv0nDd/7Q==}
+    dev: false
 
   /@csstools/css-parser-algorithms@2.1.0(@csstools/css-tokenizer@2.1.0):
     resolution: {integrity: sha512-KP8TicdXpUyeB1NMlbHud/1l39xvLGvqNFWMpG4qC6H1zs9SadGUHe5SO92n/659sDW9aGDvm9AMru0DZkN1Bw==}
@@ -245,6 +249,15 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
+
+  /@ranklab-gaming/lichess-pgn-viewer@1.5.5:
+    resolution: {integrity: sha512-CFpiR386qWgKvNSZPKTFsufCL2HRJkED/FX6F5x11RfzTYUJ5Ce80+1hBb+DkPoHrLMwoc9GolfwGszVHWEnGA==, tarball: https://npm.pkg.github.com/download/@ranklab-gaming/lichess-pgn-viewer/1.5.5/e2f0dee9b83fff9dea8f0011ef93c9692438eac3}
+    dependencies:
+      '@types/node': 18.15.11
+      chessground: 8.3.7
+      chessops: 0.12.7
+      snabbdom: 3.5.1
+    dev: false
 
   /@types/body-parser@1.19.2:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
@@ -902,6 +915,16 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /chessground@8.3.7:
+    resolution: {integrity: sha512-5CIuml9i6XpucZiYSIy4QB8OAqh3gsWaxyfnAYk+7C6PK34DFslI5dqWaWSrk/KtNEdQnmEfa8mqAn4tVsTiZA==}
+    dev: false
+
+  /chessops@0.12.7:
+    resolution: {integrity: sha512-ylWwKOudgTNJCDq7vx/Rs9fkZwPB3CEk0AJ8NtAfEYOoA3DGRQdS/Z/oQRsnQvs92rUu0yEobn4ZIPzLh8y9/w==}
+    dependencies:
+      '@badrap/result': 0.2.13
+    dev: false
 
   /chokidar@3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
@@ -3054,6 +3077,11 @@ packages:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
     dev: true
+
+  /snabbdom@3.5.1:
+    resolution: {integrity: sha512-wHMNIOjkm/YNE5EM3RCbr/+DVgPg6AqQAX1eOxO46zYNvCXjKP5Y865tqQj3EXnaMBjkxmQA5jFuDpDK/dbfiA==}
+    engines: {node: '>=8.3.0'}
+    dev: false
 
   /sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
