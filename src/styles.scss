@@ -1,12 +1,5 @@
 @import "../node_modules/@ranklab-gaming/lichess-pgn-viewer/scss/lichess-pgn-viewer";
 
-body {
-  background: #161512;
-  font-family: "Roboto";
-  --board-color: #886f46;
-  margin: 0;
-}
-
 @font-face {
   font-family: Roboto;
   font-style: normal;
@@ -29,5 +22,9 @@ body {
 }
 
 body {
-  font-family: Roboto, Arial, sans-serif;
+  background: #161512;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+
+  --board-color: #886f46;
 }
