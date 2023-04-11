@@ -1,0 +1,57 @@
+@import url("tailwindcss/base");
+@import url("tailwindcss/components");
+@import url("tailwindcss/utilities");
+
+$lpv-site-hue: 37;
+$lpv-accent: hsl(209, 77%, 46%);
+$lpv-accent-over: #fff;
+$lpv-bg: hsl(37, 12%, 96.5%);
+$lpv-bg-controls: hsl(37, 12%, 96.5%);
+$lpv-bg-movelist: hsl(37, 12%, 96.5%);
+$lpv-bg-variation: hsl(37, 12%, 92%);
+$lpv-bg-pane: fade-out(hsl(37, 12%, 96.5%), 0.01);
+$lpv-font: hsl(0, 0%, 30%);
+$lpv-font-shy: mix(#fff, hsl(0, 0%, 30%), 47%);
+$lpv-font-accent: mix(hsl(37, 12%, 96.5%), hsl(0, 0%, 30%), 20%);
+$lpv-border: hsl(0, 0%, 85%);
+
+$lpv-inaccuracy: hsl(202, 78%, 40%);
+$lpv-mistake: hsl(41, 100%, 35%);
+$lpv-blunder: hsl(0, 68%, 50%);
+$lpv-good-move: hsl(130, 67%, 40%);
+$lpv-brilliant: hsl(129, 71%, 30%);
+$lpv-interesting: hsl(307, 80%, 59%);
+
+@import "../node_modules/lichess-pgn-viewer/scss/lichess-pgn-viewer";
+
+.lpv {
+  @extend %box-neat-force;
+  &__player__title {
+    color: $c-brag;
+  }
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}

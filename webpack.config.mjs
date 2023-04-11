@@ -23,12 +23,18 @@ export default {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: "asset/resource",
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
+        },
       },
     ],
   },
@@ -41,4 +47,12 @@ export default {
     }),
   ],
   mode: "development",
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "docs"),
+    },
+    compress: true,
+    port: 8080,
+    open: true,
+  },
 }
