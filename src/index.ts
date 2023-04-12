@@ -1,8 +1,12 @@
 import "./styles.scss"
 import LichessPgnViewer from "@ranklab-gaming/lichess-pgn-viewer"
 
-document.addEventListener("DOMContentLoaded", () => {
-  LichessPgnViewer(document.getElementById("b1")!, {
-    pgn: "e4 c5 Nf3 d6 e5 Nc6 exd6 Qxd6 Nc3 Nf6",
-  })
+window.addEventListener("message", function (event) {
+  if (event.data.type === "loadPgn") {
+    LichessPgnViewer(document.getElementById("board")!, {
+      pgn: event.data.pgn,
+      drawArrows: false,
+      lichess: false,
+    })
+  }
 })
