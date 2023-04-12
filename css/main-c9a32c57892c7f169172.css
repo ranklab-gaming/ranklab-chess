@@ -755,5 +755,10 @@ body {
   background: #161512;
   font-family: Roboto, sans-serif;
   margin: 0;
+  height: 100%;
   --board-color: #886f46;
+}
+
+html {
+  height: 100%;
 }
