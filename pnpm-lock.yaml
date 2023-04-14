@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@ranklab-gaming/lichess-pgn-viewer':
-    specifier: 1.5.6
-    version: 1.5.6
+    specifier: 1.5.7
+    version: 1.5.7
   webpack:
     specifier: ^5.78.0
     version: 5.78.0(webpack-cli@5.0.1)
@@ -250,8 +250,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@ranklab-gaming/lichess-pgn-viewer@1.5.6:
-    resolution: {integrity: sha512-aX2rSedAxE0ObFQU1WQFBAA4RhbqNqtSP4huRZAvGS8zLEgTQyqqAgYS8iLz+pZ3dES8uiQXyT8N3RVPRgDG9w==, tarball: https://npm.pkg.github.com/download/@ranklab-gaming/lichess-pgn-viewer/1.5.6/0b3df2d961b94f9bbb553678a789aa659bc9de70}
+  /@ranklab-gaming/lichess-pgn-viewer@1.5.7:
+    resolution: {integrity: sha512-uA7R4rIZ/RZYCCPkHAct0Uc9raumm5uUz7kJTmlInrzIe10KE5SuhTH9uusOvJBVYKnkSwMuNjE1UPjF/liezA==, tarball: https://npm.pkg.github.com/download/@ranklab-gaming/lichess-pgn-viewer/1.5.7/1e8e3acf2d5083483c6e1b51edf42825948df0d7}
     dependencies:
       '@types/node': 18.15.11
       chessground: 8.3.7

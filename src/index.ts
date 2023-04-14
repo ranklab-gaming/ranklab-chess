@@ -11,6 +11,11 @@ window.addEventListener("message", function (event) {
       pgn: event.data.pgn,
       drawArrows: false,
       lichess: false,
+      events: {
+        onPathChange: (path) => {
+          window.parent.postMessage({ type: "pathChange", path: path.path }, "*")
+        },
+      },
     })
   }
 })
