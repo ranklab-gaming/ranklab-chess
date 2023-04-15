@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./styles.scss"
 import LichessPgnViewer from "@ranklab-gaming/lichess-pgn-viewer"
 
@@ -5,15 +6,33 @@ document.addEventListener("DOMContentLoaded", function () {
   window.parent.postMessage({ type: "ready" }, "*")
 })
 
+function filterFunctions(obj: any) {
+  const result = {} as any
+
+  for (const key in obj) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      result[key] = filterFunctions(obj[key])
+    } else if (typeof obj[key] !== "function") {
+      result[key] = obj[key]
+    }
+  }
+
+  return result
+}
+
 window.addEventListener("message", function (event) {
+  const boardElement = document.getElementById("board")
+  if (!boardElement) return
+
   if (event.data.type === "loadPgn") {
-    LichessPgnViewer(document.getElementById("board")!, {
+    LichessPgnViewer(boardElement, {
       pgn: event.data.pgn,
       drawArrows: false,
       lichess: false,
+      initialPly: 1,
       events: {
-        onPathChange: (path) => {
-          window.parent.postMessage({ type: "pathChange", path: path.path }, "*")
+        onMove: (move) => {
+          window.parent.postMessage({ type: "pathChange", move: filterFunctions(move) }, "*")
         },
       },
     })
