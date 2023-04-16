@@ -6,7 +6,7 @@
       "version": "lts"
     }
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get upgrade -y && pnpm install",
+  "postCreateCommand": "bash -i .devcontainer/postCreate.sh",
   "customizations": {
     "vscode": {
       "extensions": [
