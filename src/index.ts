@@ -32,7 +32,7 @@ window.addEventListener("message", function (event) {
       initialPly: 1,
       events: {
         onMove: (move) => {
-          window.parent.postMessage({ type: "pathChange", move: filterFunctions(move) }, "*")
+          window.parent.postMessage({ type: "move", move: filterFunctions(move) }, "*")
         },
       },
     })
