@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Path } from "@ranklab-gaming/lichess-pgn-viewer/path"
 import "./styles.scss"
 import LichessPgnViewer from "@ranklab-gaming/lichess-pgn-viewer"
+import Ctrl from "@ranklab-gaming/lichess-pgn-viewer/ctrl"
 
 document.addEventListener("DOMContentLoaded", function () {
   window.parent.postMessage({ type: "ready" }, "*")
@@ -20,12 +22,14 @@ function filterFunctions(obj: any) {
   return result
 }
 
-window.addEventListener("message", function (event) {
-  const boardElement = document.getElementById("board")
-  if (!boardElement) return
+let ctrl: Ctrl | null = null
 
+window.addEventListener("message", function (event) {
   if (event.data.type === "loadPgn") {
-    LichessPgnViewer(boardElement, {
+    const boardElement = document.getElementById("board")
+    if (!boardElement) return
+
+    ctrl = LichessPgnViewer(boardElement, {
       pgn: event.data.pgn,
       drawArrows: false,
       lichess: false,
@@ -36,5 +40,9 @@ window.addEventListener("message", function (event) {
         },
       },
     })
+  }
+
+  if (event.data.type === "move") {
+    ctrl?.toPath(new Path(event.data.move.path.path))
   }
 })
