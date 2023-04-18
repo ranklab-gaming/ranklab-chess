@@ -34,6 +34,8 @@ window.addEventListener("message", function (event) {
       drawArrows: false,
       lichess: false,
       initialPly: 1,
+      showPlayers: false,
+      orientation: event.data.playerColor ?? "white",
       events: {
         onMove: (move) => {
           window.parent.postMessage({ type: "move", move: filterFunctions(move) }, "*")
