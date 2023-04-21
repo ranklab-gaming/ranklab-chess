@@ -40,6 +40,9 @@ window.addEventListener("message", function (event) {
         onMove: (move) => {
           window.parent.postMessage({ type: "move", move: filterFunctions(move) }, "*")
         },
+        onSideResize: ({ width, height }) => {
+          window.parent.postMessage({ type: "sideResize", dimensions: { width, height } }, "*")
+        },
       },
     })
   }
