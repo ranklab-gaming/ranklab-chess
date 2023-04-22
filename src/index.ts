@@ -35,7 +35,7 @@ window.addEventListener("message", function (event) {
       drawArrows: event.data.drawArrows ?? false,
       initialPly: 1,
       showPlayers: false,
-      orientation: event.data.playerColor ?? "white",
+      orientation: event.data.orientation ?? "white",
       events: {
         onMove: (move) => {
           window.parent.postMessage({ type: "move", move: filterFunctions(move) }, "*")
