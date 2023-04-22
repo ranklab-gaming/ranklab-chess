@@ -63,4 +63,12 @@ window.addEventListener("message", function (event) {
   if (event.data.type === "setShapes") {
     ctrl?.ground?.setShapes(event.data.shapes)
   }
+
+  if (event.data.type === "goToNext") {
+    ctrl?.goTo("next")
+  }
+
+  if (event.data.type === "goToPrev") {
+    ctrl?.goTo("prev")
+  }
 })
