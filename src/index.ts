@@ -31,8 +31,8 @@ window.addEventListener("message", function (event) {
 
     ctrl = LichessPgnViewer(boardElement, {
       pgn: event.data.pgn,
-      drawArrows: false,
       lichess: false,
+      drawArrows: event.data.drawArrows ?? false,
       initialPly: 1,
       showPlayers: false,
       orientation: event.data.playerColor ?? "white",
@@ -44,10 +44,23 @@ window.addEventListener("message", function (event) {
           window.parent.postMessage({ type: "sideResize", dimensions: { width, height } }, "*")
         },
       },
+      chessground: {
+        drawable: {
+          enabled: event.data.drawArrows ?? false,
+          visible: true,
+          onChange: (shapes) => {
+            window.parent.postMessage({ type: "shapesChange", shapes }, "*")
+          },
+        },
+      },
     })
   }
 
   if (event.data.type === "move") {
     ctrl?.toPath(new Path(event.data.move.path.path))
+  }
+
+  if (event.data.type === "setShapes") {
+    ctrl?.ground?.setShapes(event.data.shapes)
   }
 })
