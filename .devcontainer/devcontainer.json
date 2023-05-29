@@ -7,6 +7,9 @@
     }
   },
   "postCreateCommand": "bash -i .devcontainer/postCreate.sh",
+  "remoteEnv": {
+    "NODE_AUTH_TOKEN": "${localEnv:NODE_AUTH_TOKEN}"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
