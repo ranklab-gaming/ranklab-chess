@@ -39,6 +39,6 @@
     "stylelint-config-standard-scss": "^8.0.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
-    "webpack-dev-server": "^4.13.2"
+    "webpack-dev-server": "^5.0.0"
   }
 }
